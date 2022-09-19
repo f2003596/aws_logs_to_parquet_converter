@@ -154,7 +154,7 @@ def get_s3a_paths(s3_client, bucket, prefix):
 def s3_read_file(s3_path, aws_access_key_id=None, aws_secret_access_key=None):
     session = boto3.Session(aws_access_key_id=aws_access_key_id,
                             aws_secret_access_key=aws_secret_access_key)
-    s3_client = session.client('s3', 'us-west-2')
+    s3_client = session.client('s3', 'us-east-2')
     parse_result = urlparse(s3_path)
     bucket = parse_result.netloc
     key = parse_result.path[1:]
@@ -185,7 +185,7 @@ def convert_s3_access_logs_to_parquet(
         SparkSession
         .builder
         #
-        # .appName('s3_server_side_log_compacter')
+        # .appName('s3_server_side_log_compacters')
         # While this setting is already default, we want to be conservative and  guard
         #   against changes in future Spark versions, for as long as we use the
         #   version 2 fileoutputcommitter.
