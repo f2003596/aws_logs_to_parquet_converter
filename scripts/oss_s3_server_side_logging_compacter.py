@@ -322,7 +322,7 @@ class S3ServerSideLoggingCompacter(object):
         parser.add_argument(
             '--source-bucket',
             default='your-s3-bucket-where-the-original-contents-are',
-            help='The S3 bucket being monitored. Default: %(default)s',
+            help='The S3 bucket being monitored for changes. Default: %(default)s',
         )
         parser.add_argument(
             '--destination-log-bucket',
