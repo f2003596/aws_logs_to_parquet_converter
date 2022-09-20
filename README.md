@@ -11,14 +11,10 @@ data via SQL syntax.
 This project contains a PySpark script that can be run inside a Spark cluster.
 The script will compact each day's data into Snappy-compressed Parquet files.
 
-Yelp uses this approach to effectively and efficiently analyze our S3 server
-access logs. We use this tool to successfully query up to ten years of S3
-access logs describing tens of petabytes of S3 objects.
-
 # Bootstrapping (if you do not have a Spark environment)
 
 We recommend you consult AWS's documentation to spin up an ephemeral AWS EMR
-cluster.  You can then use that to run our Spark program. Inside the
+cluster.  You can then use that to run the Spark program. Inside the
 `bootstrap/aws_emr` folder, you will find a series of scripts that should get
 you started.
 
@@ -38,10 +34,6 @@ key pair. Update the `login_emr.sh` script to log in to the master node.
 
 4. Download the conversion script you uploaded from S3 and execute the
 following section by running the `spark-submit` command.
-
-_Note: At Yelp, we mostly use our platform-as-a-service (PaaSTA) to execute any
-Spark programs we wish to run. As a result, we package Docker images to deploy
-and run our Spark programs._
 
 # Bootstrapping (if you have a Spark environment)
 
